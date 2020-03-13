@@ -1,0 +1,19 @@
+> use my_first_db
+> db.createCollection("students")
+> db.students.insert({name: "tommy", home_state: "california", lucky_number: 7, birthday: {month: 03, day: 02, year: 1983}}) - this but five times
+> db.students.find()
+> db.students.find({home_state: "california", home_state: "Illinois"})
+> db.students.find({lucky_number:{$gt: 3}})
+> db.students.find({lucky_number:{$lte: 10}})
+> db.students.find({lucky_number:{$gte: 1, $lte:9}})
+> db.students.updateMany({} , {$set: {interests: ['coding', 'brunch', 'mongoDB']}})
+> db.students.update({name: "Timmy"}, {$addToSet: {interests: "snowboarding"}})
+> db.students.update({name: "JEFF"}, {$addToSet: {interests: "taxes"}})
+> db.students.update({name: "JEFF"}, {$pull: {interests: "taxes"}})
+> db.students.remove({home_state: "California"})
+> db.students.remove({name: "JEFF"})
+> db.students.remove({lucky_number:{$gt: 10}}, true)
+> db.students.updateMany({}, {$set: {number_of_belts: 0}})
+> db.students.update({home_state: "Washington"} , {$set: {num_of_belts: +1}})
+
+
